@@ -1,5 +1,3 @@
-# Kristian Alikaj 
-
 ## About Me
 
 I am a Bioinformatics student at Freie Universität Berlin.I have a keen interest in Omics, Bioinformatics analysis, Data Science, and Machine Learning.
