@@ -1,440 +1,253 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width">
-      <title>Kristian Alikaj</title>
-      <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Kristian Alikaj</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-:root{
-	--main-background: #0b0c0f;
-	--main-fonts-color: #fff;
-	--main-decor-color:#00a9e2;
-    --main-header-background:#21252e;
-	--main-font-family: 'Poppins', sans-serif;
-}
-
-*{
-	margin: 0;
-	padding: 0;
-	scroll-behavior: smooth;
-}
-
-main{
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	background: var(--main-background);
-}
-
-/*────────────────── 
-       header
-──────────────────*/
-
-header{
-	margin: 0 auto;
-	width: 100%;
-	height: 70px;
-	display: flex;
-    align-items: center; 
-	justify-content: space-around; 
-    background: transparent;
-	position: fixed;
-	top: 0;
-	transition: 0.3s;
-	z-index: 5;
-}
-.nav-show{
-	opacity: 0;
-}
-
-header:hover{
-	opacity: 1;
-	background: var(--main-header-background);
-}
-
-.logo img{
-	padding-top: 5px;
-	height: 50px;
-	cursor: pointer;
-}
-
-.nav-bar{
-	list-style:none;
-	position: relative;
-	display: inline-flex;
-}
-
-a.nav-link{
-	margin: 2px;
-	padding: 5px 10px;
-	text-decoration: none;
-	color: var(--main-fonts-color);
-	font-family: var(--main-font-family);
-	cursor: pointer;
-	text-transform: uppercase;
-}
-
-.active{
-	background: var(--main-decor-color);
-}
-
-.nav-link:hover {
-	color: #000000;
-    background: var(--main-decor-color);
-}
-
-/*──────────────────
-       home
-──────────────────*/
-
-#home{ 	
-	margin: auto;
-	height: 100vh;
-	color: var(--main-fonts-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-}
-
-#home .filter{
-	background: url('https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat;
-	background-size: cover;
-	background-position:center;
-    position: absolute;
-    top: 0px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-	opacity:.20;
-}  
-
-.intro {
-	text-align:center;
-    color: var(--main-fonts-color);
-	z-index: 1;
-	margin: auto;
-	padding: 20px;
-}
-
-.intro  p{
-    margin: 5px;
-	font-size:1.2rem;
-	font-family: var(--main-font-family);
-	text-align:center;
-}
-
- h3{
-	padding-bottom: 15px;
-    letter-spacing: normal;
-    font-family: var(--main-font-family);
-	font-style: normal;
-	font-size: 60px;
-	color: var(--main-fonts-color);
-	text-shadow: 0px 0px 40px var(--main-decor-color);
-}
-
-
-/*──────────────────
-    social media
-──────────────────*/
-.social-media a {
-  margin: 10px;
-  font-size: 2rem;
-  text-align: center;
-  display: inline-block;
-  color: var(--main-fonts-color);
-}
-
-.social-media a:not(:last-child) {
-  margin-right: 20px;
-}
-
-.social-media a:hover {
-  color: var(--main-decor-color);
-  text-shadow: 0 0 50px var(--main-decor-color);
-}
-
-.social-media a[href*="mailto"] {
-  font-size: 1.2rem;
-  font-family: var(--main-font-family);
-  color: var(--main-fonts-color);
-  text-decoration: none;
-}
-
-.social-media a[href*="mailto"]:hover {
-  color: var(--main-decor-color);
-  text-shadow: none;
-}
-
-
-#projects h3 {
-  text-align: center;
-  letter-spacing: normal;
-  font-family: var(--main-font-family);
-  font-style: normal;
-  font-size: 60px;
-  color: var(--main-fonts-color);
-  text-shadow: 0px 0px 40px var(--main-decor-color);
-}
-
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.project-card {
-  width: 300px;
-  margin: 20px;
-  padding: 20px;
-  background-color: var(--main-background);
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px var(--main-decor-color);
-  text-align: center;
-}
-
-.project-card h4 {
-  font-size: 24px;
-  font-family: var(--main-font-family);
-  margin-bottom: 10px;
-  color: var(--main-fonts-color);
-}
-
-.project-card p {
-  font-size: 16px;
-  font-family: var(--main-font-family);
-  margin-bottom: 10px;
-  color: var(--main-fonts-color);
-}
-
-.project-card a {
-  font-size: 16px;
-  font-family: var(--main-font-family);
-  color: var(--main-decor-color);
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  color: var(--main-fonts-color);
-}
-
-/*──────────────────
-      Contact
-──────────────────*/
-
-#contact{
-	margin: auto;
-	padding-bottom: 20px;
-	height: 600px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: var(--main-fonts-color);
-}
-	
-#contact p{
-	padding:10px;
-	text-align:center;
-	font-size:1.2rem;
-	font-family: var(--main-font-family);
-}
-
-/*────────────────── 
-       footer
-──────────────────*/
-
-footer {
-	width: 100%;
-	height: 100%;
-    background-color: var(--main-header-background);
-}
-
-
-/*──── hr ─────*/
-
-hr {
-    background: var(--main-decor-color);
-	margin: 2px;
-	height: 3px;
-	width: 150px;
-    border-radius:5px;
-	border: hidden;
-	margin-inline-start: auto;
-    margin-inline-end: auto;
-}
-
-/*────────────────── 
-     Scrollbar
-──────────────────*/
-::-webkit-Scrollbar{
-    width: 5px; 
-	background: rgba(5,5,5,1);
-}
-::-webkit-Scrollbar-thumb{
-	border-radius: 10px;
-	background: var(--main-decor-color);
-	box-shadow: inset 0 0 20px var(--main-decor-color);
-}
-::-webkit-Scrollbar-track{
-	margin-top: 80px;
-	border-radius: 10px;
-}
-
-/*────────────────── 
-     hamburger
-──────────────────*/
-.hamburger {
-	display: none;
-}
-
-.hamburger div{
-	width: 30px;
-	height: 3px;
-	background: #dbdbdb;
-	margin: 5px;
-	transition:all 0.3s ease;
-}
-
-.toggle .line1{
-	transform: rotate(-45deg) translate(-5px,6px);
-}
-
-.toggle .line2{
-	opacity: 0;
-}
-
-.toggle .line3{
-	transform: rotate(45deg) translate(-5px,-6px);
-}
-
-@keyframes navLinkFade{
-	from{
-		opacity:0;
-		transform: translatex(50px);
-	}
-	to{
-		opacity: 1;
-		transform:translatex(0px);
-	}
-}
-
-/*────────────────── 
-    media queries
-──────────────────*/
-
-@media only screen and (max-width: 1484px) and (min-width: 1214px) {
-	.work{
-        padding:20px 20%;
+    :root {
+        --main-background: #0b0c0f;
+        --main-fonts-color: #fff;
+        --main-decor-color:#00a9e2;
+        --main-header-background:#21252e;
+        --main-font-family: 'Poppins', sans-serif;
     }
-}
-@media only screen and (max-width: 1214px) and (min-width: 1000px) {
-	.work{
-        padding:20px 12%;
+
+    * {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
     }
-}
 
+    body {
+        font-family: var(--main-font-family);
+        background-image: url('https://img.freepik.com/free-vector/gradient-world-science-day-background_52683-97461.jpg?t=st=1711296224~exp=1711299824~hmac=1f0506404554fd36b7ec3a8ba814d71d58c2d83050bb749de368bc0c549bcc9c&w=740');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: var(--main-fonts-color);
+    }
 
-@media only screen and (max-width: 500px) {
-  #projects h3 {
-    text-align: center;
-    letter-spacing: normal;
-    font-family: var(--main-font-family);
-    font-style: normal;
-    font-size: 60px;
-    color: var(--main-fonts-color);
-    text-shadow: 0px 0px 40px var(--main-decor-color);
-  }
+    main {
+        padding: 0;
+        width: 100%;
+    }
 
-  header {
-    background-color: var(--main-header-background);
-  }
+    header {
+        margin: 0 auto;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: transparent;
+        position: fixed;
+        top: 0;
+        transition: 0.3s;
+        z-index: 5;
+    }
 
-  .logo {
-    position: absolute;
-    top: 2px;
-    left: 30px;
-  }
+    .logo img {
+        padding-top: 5px;
+        height: 50px;
+        cursor: pointer;
+    }
 
-  .nav-show {
-    opacity: 1;
-  }
+    .active {
+        background: var(--main-decor-color);
+    }
 
-  .nav-bar {
-    position: fixed;
-    top: 0px;
-    right: 0;
-    width: 60%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background: var(--main-header-background);
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-    z-index: -1;
-  }
+    /* Home */
+    #home {   
+        margin: auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .intro {
+        text-align:center;
+        z-index: 1;
+        margin: auto;
+        padding: 20px;
+    }
 
-  .hamburger {
-    position: absolute;
-    top: 17px;
-    right: 25%;
-    display: block;
-    cursor: pointer;
-    z-index: 5;
-  }
+    .intro p {
+        margin: 5px;
+        font-size:1.2rem;
+        font-family: var(--main-font-family);
+        text-align:center;
+    }
 
-  .nav-bar li {
-    opacity: 0;
-  }
+    h3 {
+        padding-bottom: 15px;
+        letter-spacing: normal;
+        font-family: var(--main-font-family);
+        font-style: normal;
+        font-size: 60px;
+        color: var(--main-fonts-color);
+        text-shadow: 0px 0px 40px var(--main-decor-color);
+    }
 
-  .nav-active {
-    transform: translateX(0%);
-  }
-}
-      </style>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </head>
-    <body>
-        <div class="container">
-	<header>
-		<a class="logo" href="#home"></a>
-		<nav>	
-		 <ul class="nav-bar"><div class="bg"></div>
-			<li><a class="nav-link active" href="#home">Home</a></li>
-			<li><a class="nav-link" href="#projects">Projects</a></li>
-			<li><a class="nav-link" href="#contact">Contact</a></li>
-		 </ul>
-			<div class="hamburger">
-				<div class="line1"></div>
-            <div class="line2"></div>
-				<div class="line3"></div>
-			</div>
-		</nav>
-	</header>
-	<main>
-	  <div id="home">
-		 <div class="filter"></div>
-		 <section class="intro">
-		  <h3>kristian alikaj<hr></h3>
-		  <p>HELLO WORLD</p>
-		  <p>I am Kristian, a bioinformatics student at the Freie Universität Berlin.</p>
+    /* Social media */
+    .social-media a {
+        margin: 10px;
+        font-size: 2rem;
+        text-align: center;
+        display: inline-block;
+        color: var(--main-fonts-color);
+    }
+
+    .social-media a:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .social-media a:hover {
+        color: var(--main-decor-color);
+        text-shadow: 0 0 50px var(--main-decor-color);
+    }
+
+    .social-media a[href*="mailto"] {
+        font-size: 1.2rem;
+        font-family: var(--main-font-family);
+        color: var(--main-fonts-color);
+        text-decoration: none;
+    }
+
+    .social-media a[href*="mailto"]:hover {
+        color: var(--main-decor-color);
+        text-shadow: none;
+    }
+
+    /* Projects */
+    #projects h3 {
+        text-align: center;
+        letter-spacing: normal;
+        font-family: var(--main-font-family);
+        font-style: normal;
+        font-size: 60px;
+        color: var(--main-fonts-color);
+        text-shadow: 0px 0px 40px var(--main-decor-color);
+    }
+
+    .project-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 300px;
+        margin: 20px;
+        padding: 20px;
+        background-color: var(--main-background);
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px var(--main-decor-color);
+        text-align: center;
+    }
+
+    .project-card h4 {
+        font-size: 24px;
+        font-family: var(--main-font-family);
+        margin-bottom: 10px;
+        color: var(--main-fonts-color);
+    }
+
+    .project-card p {
+        font-size: 16px;
+        font-family: var(--main-font-family);
+        margin-bottom: 10px;
+        color: var(--main-fonts-color);
+    }
+
+    .project-card a {
+        font-size: 16px;
+        font-family: var(--main-font-family);
+        color: var(--main-decor-color);
+        text-decoration: none;
+    }
+
+    .project-card a:hover {
+        color: var(--main-fonts-color);
+    }
+
+    /* Contact */
+    #contact {
+        margin: auto;
+        padding-bottom: 20px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        
+    #contact p {
+        padding:10px;
+        text-align:center;
+        font-size:1.2rem;
+        font-family: var(--main-font-family);
+    }
+
+    /* Footer */
+    footer {
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-header-background);
+    }
+
+    hr {
+        background: var(--main-decor-color);
+        margin: 2px;
+        height: 3px;
+        width: 150px;
+        border-radius:5px;
+        border: hidden;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+    
+    .logo {
+        position: absolute;
+        top: 2px;
+        left: 30px;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="logo" href="#home"></a>
+    </header>
+    <main>
+      <div id="home">
+        <section class="intro">
+          <h3>kristian alikaj<hr></h3>
+          <p>HELLO WORLD</p>
+          <p>I am Kristian, a bioinformatics student at the Freie Universität Berlin.</p>
           <p>I speak fluently C++, SQL (Postgres), Python, HTML/CSS, and R, which I've applied in various projects, from implementing bioinformatics data structures and algorithms, to web application development, and in-depth genomics analysis.</p>
-		  <div class="social-media">
-			  <a href="https://github.com/kris96tian" target="_blank"><i class='fab fa-github'></i></a>
-			  <a href="https://www.linkedin.com/in/kristianalikaj/" target="_blank"><i class='fab fa-linkedin-in'></i></a>
-		    </div>
-		 </section> 
-	  </div>  
-    <div id="projects">
+          <div class="social-media">
+            <a href="https://github.com/kris96tian" target="_blank"><i class='fab fa-github'></i></a>
+            <a href="https://www.linkedin.com/in/kristianalikaj/" target="_blank"><i class='fab fa-linkedin-in'></i></a>
+          </div>
+        </section> 
+      </div>  
+      <div id="projects">
+        <section class="projects-section">
+          <h3>Projects<hr></h3>
+          <div id="projects">
       <div class="filter"></div>
       <section class="projects-section">
-        <h3>Projects<hr></h3>
+       
         <div class="project-list">
           <div class="project-card">
             <h4>Data Structures & Algorithms</h4>
@@ -478,50 +291,18 @@ hr {
         </div>
       </section>
     </div>
-    <div id="contact">
-      <h3>Contact.<hr></h3>
-      <p>Feel free to contact me on my social media or via email.</p>
-      <div class="social-media">
-        <a href="https://github.com/kris96tian" target="_blank"><i class='fab fa-github'></i></a>
-        <a href="https://www.linkedin.com/in/kristianalikaj/" target="_blank"><i class='fab fa-linkedin-in'></i></a>
-        <a href="mailto:kristian.alikaj@fu-berlin.de">Email</a>
+        </section>
       </div>
-    </div>
-  </body>
+      <div id="contact">
+        <h3>Contact.<hr></h3>
+        <p>Feel free to contact me on my social media or via email.</p>
+        <div class="social-media">
+          <a href="https://github.com/kris96tian" target="_blank"><i class='fab fa-github'></i></a>
+          <a href="https://www.linkedin.com/in/kristianalikaj/" target="_blank"><i class='fab fa-linkedin-in'></i></a>
+          <a href="mailto:kristian.alikaj@fu-berlin.de">Email</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
 </html>
-<script>
-// header scrolling effect
-$(window).on('scroll', function(){
-	if($(window).scrollTop()){
-      $('header').addClass('nav-show');
-	} 
-	else{
-		$('header').removeClass('nav-show');
-	}
-})
-
-//hamburger
-const navSlide = () => {
-	 const hamburger = document.querySelector(".hamburger");
-	 const navbar = document.querySelector(".nav-bar");
-	 const navLinks = document.querySelectorAll(".nav-bar li");
-
-     hamburger.onclick = () => {
-	 navbar.classList.toggle("nav-active");
-		 
-      //Animation links
-	 navLinks.forEach((link, index) => {
-		if (link.style.animation) {
-			link.style.animation = "";
-		} else {
-			link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7+1}s`;
-		   }
-		});
-	  //hamburger animation
-	 hamburger.classList.toggle("toggle");
-    }
-	 
-	}
-
-window.onload = () => navSlide();
-</script>  
