@@ -1,322 +1,314 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kristian Alikaj</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
     :root {
-        --main-background: #0b0c0f;
-        --main-fonts-color: #fff;
-        --main-decor-color:#00a9e2;
-        --main-header-background:#21252e;
-        --main-font-family: 'Poppins', sans-serif;
+      --main-background: #0b0c0f;
+      --main-fonts-color: #fff;
+      --main-decor-color: #00a9e2;
+      --main-header-background: #21252e;
+      --main-font-family: 'Poppins', sans-serif;
     }
 
     * {
-        margin: 0;
-        padding: 0;
-        scroll-behavior: smooth;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: var(--main-font-family);
-        background-image: url('https://img.freepik.com/free-vector/gradient-world-science-day-background_52683-97461.jpg?t=st=1711296224~exp=1711299824~hmac=1f0506404554fd36b7ec3a8ba814d71d58c2d83050bb749de368bc0c549bcc9c&w=740');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-        color: var(--main-fonts-color);
+      font-family: var(--main-font-family);
+      background-image: url('https://img.freepik.com/free-vector/gradient-world-science-day-background_52683-97461.jpg?t=st=1711296224~exp=1711299824~hmac=1f0506404554fd36b7ec3a8ba814d71d58c2d83050bb749de368bc0c549bcc9c&w=740');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--main-fonts-color);
     }
 
     main {
-        padding: 0;
-        width: 100%;
+      padding-top: 70px; /* Adjusted padding to account for fixed header */
+      width: 100%;
     }
 
     header {
-        margin: 0 auto;
-        width: 100%;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        background: transparent;
-        position: fixed;
-        top: 0;
-        transition: 0.3s;
-        z-index: 5;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: transparent;
+      z-index: 1000;
     }
 
     .logo img {
-        padding-top: 5px;
-        height: 50px;
-        cursor: pointer;
+      padding-top: 5px;
+      height: 50px;
+      cursor: pointer;
     }
 
     .active {
-        background: var(--main-decor-color);
+      background: var(--main-decor-color);
     }
 
     /* Home */
-    #home {   
-        margin: auto;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+    #home {
+      margin: auto;
+      padding: 20px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .intro {
+      text-align: center;
+      margin: auto;
+      text-shadow: #0b0c0f;
+      text-size-adjust:var(--main-font-family);
+      padding: 0 20px; 
     }
     
-    .intro {
-        text-align:center;
-        z-index: 1;
-        margin: auto;
-        padding: 80px;
-    }
-
     .intro p {
-        margin: 5px;
-        font-size:1.2rem;
-        font-family: var(--main-font-family);
-        text-align:center;
+      margin: 10px 0;
+      font-size: 1.2rem;
+      max-width: 900px;
     }
 
+    .intro a{
+      text-decoration-line: none;
+    }
+    
     h3 {
-        padding-bottom: 15px;
-        letter-spacing: normal;
-        font-family: var(--main-font-family);
-        font-style: normal;
-        font-size: 60px;
-        color: var(--main-fonts-color);
-        text-shadow: 0px 0px 40px var(--main-decor-color);
+      padding-bottom: 15px;
+      letter-spacing: normal;
+      font-size: 60px;
+      color: var(--main-fonts-color);
+      text-shadow: 0px 0px 40px var(--main-decor-color);
     }
 
     /* Social media */
     .social-media a {
-        margin: 10px;
-        font-size: 2rem;
-        text-align: center;
-        display: inline-block;
-        color: var(--main-fonts-color);
+      margin: 10px;
+      font-size: 2rem;
+      text-align: center;
+      color: var(--main-fonts-color);
     }
 
     .social-media a:not(:last-child) {
-        margin-right: 20px;
+      margin-right: 20px;
     }
 
     .social-media a:hover {
-        color: var(--main-decor-color);
-        text-shadow: 0 0 50px var(--main-decor-color);
+      color: var(--main-decor-color);
+      text-shadow: 0 0 50px var(--main-decor-color);
     }
 
     .social-media a[href*="mailto"] {
-        font-size: 1.2rem;
-        font-family: var(--main-font-family);
-        color: var(--main-fonts-color);
-        text-decoration: none;
+      font-size: 1.2rem;
+      color: var(--main-fonts-color);
+      text-decoration: none;
     }
 
     .social-media a[href*="mailto"]:hover {
-        color: var(--main-decor-color);
-        text-shadow: none;
+      color: var(--main-decor-color);
+      text-shadow: none;
     }
 
     /* Projects */
     #projects h3 {
-        text-align: center;
-        letter-spacing: normal;
-        font-family: var(--main-font-family);
-        font-style: normal;
-        font-size: 60px;
-        color: var(--main-fonts-color);
-        text-shadow: 0px 0px 40px var(--main-decor-color);
+      text-align: center;
+      letter-spacing: normal;
+      font-size: 60px;
+      color: var(--main-fonts-color);
+      text-shadow: 0px 0px 40px var(--main-decor-color);
     }
 
     .project-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 20px; /* Adjusted padding for responsiveness */
     }
 
     .project-card {
-        width: 300px;
-        margin: 20px;
-        padding: 20px;
-        background-color: var(--main-background);
-        border-radius: 10px;
-        box-shadow: 0px 0px 20px var(--main-decor-color);
-        text-align: center;
+      width: calc(33.33% - 40px); /* Adjusted width for responsiveness */
+      margin: 20px;
+      padding: 20px;
+      background-color: var(--main-background);
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px var(--main-decor-color);
+      text-align: center;
     }
 
     .project-card h4 {
-        font-size: 24px;
-        font-family: var(--main-font-family);
-        margin-bottom: 10px;
-        color: var(--main-fonts-color);
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--main-fonts-color);
     }
 
     .project-card p {
-        font-size: 16px;
-        font-family: var(--main-font-family);
-        margin-bottom: 10px;
-        color: var(--main-fonts-color);
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: var(--main-fonts-color);
     }
 
     .project-card a {
-        font-size: 16px;
-        font-family: var(--main-font-family);
-        color: var(--main-decor-color);
-        text-decoration: none;
+      font-size: 16px;
+      color: var(--main-decor-color);
+      text-decoration: none;
     }
 
     .project-card a:hover {
-        color: var(--main-fonts-color);
+      color: var(--main-fonts-color);
     }
 
     /* Contact */
     #contact {
-        margin: auto;
-        padding-bottom: 20px;
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      margin: auto;
+      padding: 20px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-        
+
     #contact p {
-        padding:10px;
-        text-align:center;
-        font-size:1.2rem;
-        font-family: var(--main-font-family);
+      text-align: center;
+      font-size: 1.2rem;
     }
 
-    /* Footer */
-    footer {
-        width: 100%;
-        height: 100%;
-        background-color: var(--main-header-background);
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      .project-card {
+        width: calc(50% - 40px); 
+      }
     }
 
-    hr {
-        background: var(--main-decor-color);
-        margin: 2px;
-        height: 3px;
-        width: 150px;
-        border-radius:5px;
-        border: hidden;
-        margin-inline-start: auto;
-        margin-inline-end: auto;
+    @media screen and (max-width: 480px) {
+      .project-card {
+        width: calc(100% - 40px); /* Adjusted width for responsiveness */
+      }
     }
-    
-    .logo {
-        position: absolute;
-        top: 2px;
-        left: 30px;
-    }
-
-    .intro p:nth-child(2) {
-  font-weight: bold;
-}
-#contact {
-  height: auto;
-  padding-bottom: 20px;
-}
-
   </style>
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
   <div class="container">
     <header>
       <a class="logo" href="#home"></a>
     </header>
     <main>
+
       <div id="home">
         <section class="intro">
           <h3>Kristian Alikaj<hr></h3>
-          <p>Bioinformatics Student | Freie Universität Berlin</p>
-          <br>
-<p>I am a skilled and passionate bioinformatics student with expertise in data structures,</p><p> algorithms, web development, machine learning, and genomics analysis.</p> 
-<p>I specialize in C++, SQL (Postgres), Python, HTML/CSS, and R, and have applied these skills</p><p> to various projects, including implementing bioinformatics data structures and algorithms,</p><p> developing web applications, and conducting in-depth genomics analyses.</p>
-          <div class="social-media">
+          <p>Bioinformatics Student | <a href="https://www.mi.fu-berlin.de/en/bioinf/stud/bachelor/index.html"
+              target="_blank">Freie Universität Berlin</a></p> <br>
+
+          <p>I am a skilled and passionate bioinformatics student with expertise in data structures, algorithms, 
+             web development, machine learning, and genomics analysis. I specialize in C++, SQL (Postgres), 
+             Python, HTML, and R, and have applied these skills to various projects, including implementing 
+             bioinformatics data structures and algorithms, developing web applications, and conducting 
+             in-depth genomics analyses.</p>
+            <div class="social-media">
             <a href="https://github.com/kris96tian" target="_blank"><i class='fab fa-github'></i></a>
-            <a href="https://www.linkedin.com/in/kristianalikaj/" target="_blank"><i class='fab fa-linkedin-in'></i></a>
-          </div>
-        </section> 
-      </div>  
+            <a href="https://www.linkedin.com/in/kristianalikaj/" target="_blank"><i
+                         class='fab fa-linkedin-in'></i></a>
+            </div>
+            </section>
+            </div>
       <div id="projects">
         <section class="projects-section">
           <h3>Projects<hr></h3>
+
           <div id="projects">
-      <div class="filter"></div>
-      <section class="projects-section">
-       
-        <div class="project-list">
-          <div class="project-card">
-            <h4>Data Structures & Algorithms</h4>
-            <p>A collection of bioinformatics DS and algorithms implemented using OOP in C++</p>
-            <a href="https://github.com/kris96tian/dsa_cpp" target="_blank">View Repository</a>
+            <div class="filter"></div>
+
+            <section class="projects-section">
+              <div class="project-list">
+
+                <div class="project-card">
+                  <h4>Data Structures & Algorithms</h4>
+                  <p>A collection of bioinformatics DS and algorithms implemented using OOP in C++</p>
+                  <a href="https://github.com/kris96tian/dsa_cpp" target="_blank">View Repository</a>
+                </div>
+
+                <div class="project-card">
+                  <h4>Bioinformatics Tools</h4>
+                  <p>A web app showcasing some bioinformatics tools</p>
+                  <a href="https://bioinfotool.pythonanywhere.com/" target="_blank">View Web-App</a>
+                </div>
+
+                <div class="project-card">
+                  <h4>Database Systems/SQL</h4>
+                  <p>A project involving Postgres & Flask/Python</p>
+                  <a href="https://github.com/kris96tian/database_app" target="_blank">View Project</a>
+                </div>
+
+                <div class="project-card">
+                  <h4>Diabetes Prediction</h4>
+                  <p>A web app developed using Machine Learning/Flask</p>
+                  <a href="https://diabetesp.pythonanywhere.com/" target="_blank">View Web-App</a>
+                </div>
+
+                <div class="project-card">
+                  <h4>ECG Silent Heart attacks</h4>
+                  <p>A machine learning project using Pytorch for health AI</p>
+                  <a href="https://github.com/kris96tian/machine_learning_ecg" target="_blank">View Project</a>
+                </div>
+
+                <div class="project-card">
+                  <h4>Rain forest</h4>
+                  <p>A website developed with HTML & CSS</p>
+                  <a href="https://userpage.fu-berlin.de/kristiaa96/forest" target="_blank">View Website</a>
+                </div>
+
+                <div class="project-card">
+                  <h4>SNP/Variant Calling Analysis</h4>
+                  <p>[bash, fastQC samtools, bedtools, vcftools, bwa, gatk]</p>
+                </div>
+
+                <div class="project-card">
+                  <h4>scRNA-Analysis</h4>
+                  <p>A project involving R (Seurat, edgeR, DESeq2) and Python (Scanpy)</p>
+                  <a href="https://github.com/kris96tian/sc-RNAseq_analysis" target="_blank">Example Project</a>
+                </div>
+              </div>
+            </section>
+
           </div>
-          <div class="project-card">
-            <h4>Bioinformatics Tools</h4>
-            <p>A web app showcasing some bioinformatics tools</p>
-            <a href="https://bioinfotool.pythonanywhere.com/" target="_blank">View Web-App</a>
-          </div>
-          <div class="project-card">
-            <h4>Database Systems/SQL</h4>
-            <p>A project involving Postgres & Flask/Python</p>
-            <a href="https://github.com/kris96tian/database_app" target="_blank">View Project</a>
-          </div>
-          <div class="project-card">
-            <h4>Diabetes Prediction</h4>
-            <p>A web app developed using Machine Learning/Flask</p>
-            <a href="https://diabetesp.pythonanywhere.com/" target="_blank">View Web-App</a>
-          </div>
-          <div class="project-card">
-            <h4>ECG Silent Heart attacks</h4>
-            <p>A machine learning project using Pytorch for health AI</p>
-            <a href="https://github.com/kris96tian/machine_learning_ecg" target="_blank">View Project</a>
-          </div>
-          <div class="project-card">
-            <h4>Rain forest</h4>
-            <p>A website developed with HTML & CSS</p>
-            <a href="https://userpage.fu-berlin.de/kristiaa96/forest" target="_blank">View Website</a>
-          </div>
-          <div class="project-card">
-            <h4>SNP/Variant Calling Analysis</h4>
-            <p>[bash, fastQC samtools, bedtools, vcftools, bwa, gatk]</p>
-          </div>
-          <div class="project-card">
-            <h4>scRNA-Analysis</h4>
-            <p>A project involving R (Seurat, edgeR, DESeq2) and Python (Scanpy)</p>
-            <a href="https://github.com/kris96tian/sc-RNAseq_analysis" target="_blank">Example Project</a>
-          </div>
-        </div>
-      </section>
-    </div>
+
         </section>
       </div>
+
       <div id="contact">
         <h3>Contact me<hr></h3>
-        <p>I am actively seeking internship or job opportunities 
-             in the field of bioinformatics or related areas.<br>
-              Please feel free to contact me if you have any 
-           openings or would like to discuss discuss potential 
-         collaborations.</p>
+        <p>I am actively seeking internship or job opportunities in the field of bioinformatics or related areas.<br>
+          Please feel free to contact me if you have any openings or would like to discuss potential collaborations.</p>
+    
         <div class="social-media">
           <a href="https://github.com/kris96tian" target="_blank"><i class='fab fa-github'></i></a>
           <a href="https://www.linkedin.com/in/kristianalikaj/" target="_blank"><i class='fab fa-linkedin-in'></i></a>
           <a href="mailto:kristian.alikaj@fu-berlin.de">Email</a>
         </div>
       </div>
+    
     </main>
-  </div>
-</body>
-</html>
+      </div>
+    </body>
+    </html>
