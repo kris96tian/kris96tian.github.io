@@ -123,7 +123,7 @@ h2 {
 .hero p {
     font-size: 1.2rem;
     max-width: 600px;
-    margin: 0 auto 30px auto; 
+    margin: 0 auto 30px auto; /* Centered horizontally with bottom margin */
 }
 
 .cta-button {
@@ -153,17 +153,18 @@ h2 {
     background-color: var(--secondary-bg-color);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slightly smaller initial shadow */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
 }
 
 .project-info {
-    padding: 20px; 
+    padding: 20px; /* Increased padding for better visual balance */
+}
 
 .project-info h3 {
     font-size: 1.5rem;
@@ -235,30 +236,30 @@ h2 {
     }
 
     .hero {
-        padding: 30px 0; 
+        padding: 30px 0; /* Reduced padding for smaller screens */
     }
 
     .project-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* Single column on small screens */
     }
 }
 .submit-button {
-    background-color: var(--accent-color); 
-    color: var(--main-bg-color);
+    background-color: var(--accent-color); /* Teal background */
+    color: var(--main-bg-color); /* Dark blue text */
     border: none;
-    padding: 15px 30px;       
-    font-size: 1.1rem;           
-    font-weight: 600;           
-    border-radius: 8px;      
+    padding: 15px 30px;        /* Increased padding for larger size */
+    font-size: 1.1rem;           /* Slightly larger font size */
+    font-weight: 600;           /* Bold text */
+    border-radius: 8px;        /* More rounded corners */
     cursor: pointer;
     transition: all 0.3s ease;  
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .submit-button:hover {
-    background-color: #45c7b3;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
-    transform: translateY(-2px);
+    background-color: #45c7b3; /* Slightly darker teal on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
 
 }
   #particles-js {
@@ -267,7 +268,7 @@ h2 {
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: -1; /* Place it behind other content */
         }
    
    </style>
