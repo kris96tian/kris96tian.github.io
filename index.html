@@ -451,9 +451,9 @@ h2 {
     </div>
 </section>
 
-      <section id="contact" class="container">
+     <section id="contact" class="container">
     <h2>Contact Me</h2>
-    <form class="contact-form" action="mailto:alikajk27@gmail.com" method="post" enctype="text/plain">
+    <form class="contact-form" id="contact-form" onsubmit="sendEmail(event)">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -484,7 +484,7 @@ h2 {
                     }
                 },
                 "color": {
-                    "value": "#64ffda" // Using your accent color
+                    "value": "#64ffda" 
                 },
                 "opacity": {
                     "value": 0.5,
@@ -503,7 +503,7 @@ h2 {
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#64ffda", // Using your accent color
+                    "color": "#64ffda", 
                     "opacity": 0.4,
                     "width": 1
                 },
@@ -536,6 +536,16 @@ h2 {
             },
             "retina_detect": true
         });
+
+    function sendEmail(event) {
+    event.preventDefault(); 
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    window.location.href = `mailto:alikajk27@gmail.com?subject=Message from ${name}&body=Email: ${email}%0D%0AMessage: ${message}`;
+}
     </script>
 </body>
 </html>
